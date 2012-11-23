@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RakaInc</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<nav>
+	<%= render 'layouts/navbar' %>		
+	</nav>
+	<header class="page-header">
+		<%= render 'layouts/header' %>
+	</header>
+	<div class="row">		
+		<nav class="span3">
+			<%= render 'layouts/sidebar' %>
+		</nav>
+		<section class="span11">
+			<%= render 'layouts/carrusel' %>			
+			<%= yield %>			
+		</section>
+		<section class="span3">
+			a la derecha
+		</section>
+	</div>
+</body>
+</html>

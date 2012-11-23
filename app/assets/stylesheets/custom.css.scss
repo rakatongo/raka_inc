@@ -1,0 +1,49 @@
+
+@import "bootstrap";
+
+/* MIXINS IMPORTS */
+@mixin transiciones{
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+
+/* APPLICATION GENERAL LAYOUT */
+
+	/* PAGE HEADER */
+.page-header{
+	padding: 60px 0 50px 0;
+	text-align: center;
+	background: url(back_header.jpg) no-repeat;
+	background-size:100% 200px;
+}
+
+	/* SPAN 11 */
+.span11{
+	word-wrap: break-word;
+}
+
+	/* NAVBAR TOP  x ID*/
+#navegacion{
+	a{
+		color: $blue;
+		@include transiciones;
+	}
+	a:hover{
+		color: $white;
+		@include transiciones;
+	}
+
+}
+
+
+/* FIN APLICATION GENERAL LAYOUT */
+
+
+/* carousel */
+#myCarousel{
+	display: block;
+}
