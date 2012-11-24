@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  titulo: MyString
+  imagen_url: MyString
+  precio: 9.99
+  subcategory_id: 1
+
+two:
+  titulo: MyString
+  imagen_url: MyString
+  precio: 9.99
+  subcategory_id: 1
