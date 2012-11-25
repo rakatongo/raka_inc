@@ -1,0 +1,17 @@
+<article class="span8 offset1 well" id="single_product">
+	<header>
+		<h2><%= @product.titulo %></h2>
+	<header>
+	<%= image_tag(@product.imagen_url) %>	
+	
+	<% if !@product.options.empty? %>
+	<div class="forumalrio">
+		<%= label_tag @product.options.first.tipo, nil,class: "label label-info" %>		
+			<%= select_tag 'product',
+			 options_for_select(@product.options.collect{ |u| [u.texto, u.	valor] }),
+			 class: "label label-info" %>
+		<% end %>
+		<p>Price: <b><%= number_to_currency(@product.precio, presicion:2) %></b></p>
+	</div>
+	
+</article>

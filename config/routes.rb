@@ -1,7 +1,10 @@
 RakaInc::Application.routes.draw do
-  
-  root to: "pagina#index"
+  resources :categories
+  resources :products
 
+  root to: "pagina#index"
+  
+  match "/about", to: "pagina#about"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

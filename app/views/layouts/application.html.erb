@@ -8,7 +8,7 @@
 </head>
 <body>
 	<nav>
-	<%= render 'layouts/navbar' %>		
+		<%= render 'layouts/navbar' %>		
 	</nav>
 	<header class="page-header">
 		<%= render 'layouts/header' %>
@@ -18,11 +18,13 @@
 			<%= render 'layouts/sidebar' %>
 		</nav>
 		<section class="span11">
-			<%= render 'layouts/carrusel' %>			
+			<% if es_index? %>
+				<%= render 'layouts/carrusel' %>			
+			<% end %>
 			<%= yield %>			
 		</section>
 		<section class="span3">
-			a la derecha
+			<%= image_tag("imagen.jpg") %>
 		</section>
 	</div>
 </body>

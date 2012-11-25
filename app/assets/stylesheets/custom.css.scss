@@ -12,6 +12,9 @@
 
 
 /* APPLICATION GENERAL LAYOUT */
+body{
+	background: white;
+}
 
 	/* PAGE HEADER */
 .page-header{
@@ -24,6 +27,8 @@
 	/* SPAN 11 */
 .span11{
 	word-wrap: break-word;
+	text-align: center;
+	padding-bottom: 60px;
 }
 
 	/* NAVBAR TOP  x ID*/
@@ -39,6 +44,35 @@
 
 }
 
+/* NAV IZQUIERDA */
+nav.span3{
+	#accordion2{
+		
+	}
+	
+	.accordion-heading{
+		a{	
+			background-image: -webkit-linear-gradient(top, #5BC0DE, #2F96B4);
+			background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5BC0DE), to(#2F96B4));
+			border-radius: 5px;			
+			color: $white;
+			text-shadow: 0 1px $black;
+			text-decoration: none;
+			font-weight: bold;
+			@include transiciones;
+		}
+	}
+	.accordion-heading:hover{	
+		a{
+			background-color: white;
+			background-image: none;
+			color: $blue;
+			text-shadow: 0 0 1px $black;
+			@include transiciones;			
+		}		
+	}
+}
+
 
 /* FIN APLICATION GENERAL LAYOUT */
 
@@ -46,4 +80,133 @@
 /* carousel */
 #myCarousel{
 	display: block;
+}
+
+/* IMAGENES INDEX */
+
+
+/* ARRRAY DE PRODUCTOS EN CATEGORIA/INDEX */
+#motrar_product{
+	display: inline-block;	
+	margin-top: 20px;	
+	.product{
+		text-align: center;
+		display: block;
+		float: left;
+		font-size: 1em;		
+		background-color: white;	
+		width: 250px;	
+		height: 340px;
+		margin: 15px;
+		word-wrap: break-word;
+		@include transiciones;
+		h3{
+			font-size: 1.2em;
+			color: $blue;
+			line-height: 20px;
+			border-bottom: 1px solid gray;
+			padding-bottom: 10px;
+		}		
+		img{			
+			margin-top: 10px;			
+			max-width: 200px;
+			max-height: 150px;
+			padding: 10px;			
+		}	
+		b{
+			color: $green;
+		}
+		p{			
+			
+		}
+	}
+	.product:hover{
+		background: $white;
+		box-shadow: 0 0 14px black;
+		text-shadow: 0 1px black;
+		h3{
+			text-shadow: 0 1px black;
+			color: $gray;
+			
+		}
+		img{
+			background-color: white;
+		}
+		-webkit-transform: scale(1.2);
+		-moz-transform: scale(1.2);
+		transform: scale(1.2);
+		@include transiciones;
+	}
+}
+
+/* CARRUSEL */
+#myCarousel{
+	box-shadow: 0 0 25px black;
+	width: 800px;
+	height: 450px;
+	margin-left: auto;
+	margin-right: auto;
+	img{
+		width: 800px;
+		height: 450px;
+	}
+	.carousel-caption{
+		h3{
+			color: $blue;
+		}
+	}
+}
+
+/* SHOW SINGLE PRODUCT PRODUCT#SHOW */
+#single_product{
+	padding: 20px 20px 40px 20px;
+	img{
+		padding: 10px;
+		display: inline-block;
+		max-width: 250px;
+		max-height: 200px;
+		background-color: white;
+		margin-right: 40px;
+		@include transiciones;
+	}
+	img:hover{
+		box-shadow: 0 0 5px $black;
+		-webkit-transform: scale(1.2);
+		-moz-transform: scale(1.2);
+		transform: scale(1.2);
+		@include transiciones;
+	}
+	h2{
+		color: $blue;
+		display: inline-block;
+	}
+	p{
+		margin-top: 40px;
+		font-size: 1.2em;
+		b{
+			color: $green;
+		}
+	}
+	.forumalrio{		
+		display: inline-block;
+		label{
+			padding: 10px;
+			font-size: 1em;
+		}
+		#product{
+			color: $black;
+		}
+		#product:focus{
+			border-color: none;
+		}
+	}
+}
+
+.normales{
+	p{
+		text-align: left;
+		font-size: 1.2em;
+		letter-spacing: 2px;
+		line-height: 1.4em;
+	}
 }
