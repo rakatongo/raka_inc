@@ -4,8 +4,10 @@
 		<div class="product">
 			<%= image_tag(f.imagen_url) %>
 			<h3><%= f.titulo %></h3>
-			<p>Price: <b><%= number_to_currency(f.precio, presicion:2) %></b></p>
-			<%= link_to "More info.", product_path(f.id), class: "btn btn-info" %>
+			<p><%= number_to_currency(f.precio, presicion:2) %></p>
+			<%= link_to product_path(f.id), class: "btn btn-info"  do %>
+				<b class="icon-search icon-white"></b>More Info.
+			<% end %>
 		</div>		
 	<% end %>
 </div>

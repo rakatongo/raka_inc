@@ -11,7 +11,7 @@
 			 options_for_select(@product.options.collect{ |u| [u.texto, u.	valor] }),
 			 class: "label label-info" %>
 		<% end %>
-		<p>Price: <b><%= number_to_currency(@product.precio, presicion:2) %></b></p>
+		<p><%= number_to_currency(@product.precio, presicion:2) %></p>
 	</div>
 	
 </article>

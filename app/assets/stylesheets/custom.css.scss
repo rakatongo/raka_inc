@@ -116,8 +116,20 @@ nav.span3{
 		b{
 			color: $green;
 		}
-		p{			
-			
+		p{	
+			padding-top: 32px !important;
+			width: 84px;
+			height: 52px;	
+			letter-spacing: -1px;
+			color: $white;	
+			background: url('precio.png') no-repeat, #2F96B4;			
+			display: inline-block;
+			background-position: center;
+			font-size: 24px !important;
+			text-indent: -3px !important;
+			-webkit-border-radius: 60px;
+			border-radius: 60px;
+			border: 1px solid white;
 		}
 	}
 	.product:hover{
