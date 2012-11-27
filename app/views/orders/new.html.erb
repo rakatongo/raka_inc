@@ -1,0 +1,5 @@
+<%= form_for @order, url: orders_path do |f| %>
+	<%= f.text_field :name, placeholder: "Name..." %>
+	<%= f.text_field :address, placeholder: "Adress..." %>
+	<%= f.submit "Pay!" %>
+<% end %>

@@ -1,5 +1,13 @@
 class Order < ActiveRecord::Base
-  attr_accessible :line_item_id, :pay_type, :user_id  
-  belongs_to :users
-  belongs_to :line_items, :class_name => "Line_Items", :foreign_key => "line_items_id"
+  attr_accessible :pay_type, :user_id
+  attr_accessor :name, :address
+  has_many :line_items
+  belongs_to :user, :class_name => "User", :foreign_key => "user_id"
+
+  def crear_orden(cart)
+  	cart.line_items.each do |item|
+  		#item.cart_id = nil
+  		line_items << item
+  	end
+  end
 end

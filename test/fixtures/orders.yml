@@ -3,9 +3,7 @@
 one:
   pay_type: MyString
   user_id: 1
-  line_item_id: 1
 
 two:
   pay_type: MyString
   user_id: 1
-  line_item_id: 1

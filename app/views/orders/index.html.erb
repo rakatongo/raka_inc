@@ -1,0 +1,19 @@
+<% @orders.each do |f| %>
+	<h4>Order: <%= f.id %>, <%= time_tag f.created_at.to_datetime %></h4>
+	<table class="table table-striped" id="order">
+		<tr>
+			<td>Product ID</td>
+			<td>Product</td>
+			<td>Quantity</td>
+			<td>Price</td>
+		</tr>
+		<% f.line_items.each do |i|%>
+			<tr>			
+				<td><%= i.product.id %></td>
+				<td><%= i.product.titulo %></td>
+				<td><%= i.quantity %></td>
+				<td><%= i.product.precio %></td>						
+			</tr>
+		<% end %>
+	</table>	
+<% end %>

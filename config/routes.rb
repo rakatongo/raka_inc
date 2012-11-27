@@ -1,5 +1,6 @@
 RakaInc::Application.routes.draw do
   devise_for :users
+  
 
   resources :categories, only: [:show]
   resources :products, only:[:show] do
@@ -7,13 +8,13 @@ RakaInc::Application.routes.draw do
   end
   #resources :carts, only: [:index]
   resources :line_items, only: [:create, :destroy, :update]
+  resources :orders
 
   root to: "pagina#index"
-  
+  match "about", to: "pagina#about"
   match '/cart', to: "carts#index"
   put '/cart/update', to: "carts#update"
-  delete '/cart/limpiar', to: "carts#delete_items"
-  match "/about", to: "pagina#about"
+  delete '/cart/limpiar', to: "carts#delete_items"  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
