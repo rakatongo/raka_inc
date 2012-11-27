@@ -17,10 +17,19 @@
         <!-- .nav, .navbar-search, .navbar-form, etc -->
         <ul class="nav pull-right" id="navegacion">
           <li><%=link_to "Home", root_path %></li>
-          <li><%= link_to "About Us", about_path %></li>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">My Account</a></li>
-          <li><a href="#">View Cart/Checkout</a></li>
+          <li><%= link_to "About Us", about_path %></li>          
+          <% if user_signed_in? %>
+            <li><%= link_to "Profile", edit_user_registration_path %></li>
+            <li><%= link_to "Log out!", destroy_user_session_path,method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign up!", new_user_registration_path %></li>
+            <li><%= link_to "Log in!", new_user_session_path %></li>
+          <% end %>
+          <li><%= link_to cart_path do  %>
+            <b class="icon-shopping-cart icon-white"></b> Cart
+            <% end %>
+          </li>
+          <li><%= link_to "#{number_to_currency(current_cart.total)}", cart_path, id: "nav_precio" %></li>
         </ul>
       </div>
  

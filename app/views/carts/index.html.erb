@@ -1,0 +1,35 @@
+<div id="carro" class="well">
+	<h2>Your cart </h2>
+	<%= form_tag cart_update_path, method: :put do |f| %>	
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Product Name</th>
+				<th class="quantity">Quantity</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody>					
+			<% @cart.line_items.each do |line_item| %>
+				<tr id="id_<%= line_item.id %>">
+					<td><%= line_item.product.titulo %></td>
+					<td class="quantity"
+					 >
+					 <%= text_field_tag "quantity[]", "", class: "cantidad", placeholder: line_item.quantity %>
+					</td>
+					<td class="verde"><%= number_to_currency(line_item.product.precio) %></td>
+					<td><%= link_to "Destroy", line_item_path(line_item),
+					 method: :delete, remote: true, class: "btn btn-mini btn-info" %></td>
+				</tr>
+			<% end %>
+			<tr>
+				<td></td>
+				<td class="quantity"><%= submit_tag "Update Cart", class: "btn btn-primary btn-info" %> </td>
+				<td class="precio_tabla"><b><%= number_to_currency(@cart.total) %></b></td>
+				<td><%= link_to "Clear Cart", cart_limpiar_path,
+				 method: :delete, class: "btn btn-mini btn-danger" %></td>
+			</tr>			
+		</tbody>
+	</table>
+	<% end %>
+</div>

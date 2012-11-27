@@ -2,6 +2,8 @@ class Product < ActiveRecord::Base
   attr_accessible :imagen_url, :precio, :subcategory_id, :titulo
   belongs_to :subcategory
   has_many :options, :dependent => :destroy
+  has_many :line_items
+  has_many :comments
   
   #format_image = %r{\.(gif|jpg|png)$}i
 

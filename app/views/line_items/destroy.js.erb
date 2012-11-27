@@ -1,0 +1,16 @@
+var $number = parseInt($('#id_<%= @line_item.id %> .quantity').text(),10)
+function mostrar () {
+	// body...
+	$('#nav_precio').css('color', 'rgb(250,250,250)')
+	$('#nav_precio').fadeOut('slow', function() {
+		$('.precio_tabla b').text(' ').hide().stop(true)
+		$('.precio_tabla b').text('<%= number_to_currency(@cart.total) %>').delay('400').fadeIn()	
+		$(this).text('<%= number_to_currency(@cart.total) %>').delay('400').fadeIn()
+		$(this).css('color', 'rgb(10,250,10)')		
+	})
+}
+$('#id_<%= @line_item.id %>').fadeOut('fast',function() {
+	mostrar()
+	$(this).remove()
+})
+

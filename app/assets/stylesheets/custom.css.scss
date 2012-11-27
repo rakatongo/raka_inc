@@ -13,7 +13,13 @@
 
 /* APPLICATION GENERAL LAYOUT */
 body{
-	background: white;
+	background: url(noise.png);
+	.alert{
+		text-align: center;
+	}	
+}
+.cuerpaso{
+	background-color: rgba(0, 110, 251, .3);
 }
 
 	/* PAGE HEADER */
@@ -26,14 +32,18 @@ body{
 
 	/* SPAN 11 */
 .span11{
+	box-shadow: 0 0 15px $black;
+	border-radius: 10px;	
 	word-wrap: break-word;
 	text-align: center;
-	padding-bottom: 60px;
+	padding-bottom: 60px;	
+	background-color: rgba(60,60,150,.1);
 }
 
 	/* NAVBAR TOP  x ID*/
-#navegacion{
-	a{
+#navegacion{	
+	a{	
+		padding: 15px;
 		color: $blue;
 		@include transiciones;
 	}
@@ -41,15 +51,19 @@ body{
 		color: $white;
 		@include transiciones;
 	}
+	#nav_precio{
+		color: rgb(10,250,10);
+		font-weight: bold;
+		letter-spacing: 2px;
+	}
 
 }
 
 /* NAV IZQUIERDA */
-nav.span3{
+nav.span3{	
 	#accordion2{
-		
-	}
-	
+	background-color: $grayLighter;
+	}	
 	.accordion-heading{
 		a{	
 			background-image: -webkit-linear-gradient(top, #5BC0DE, #2F96B4);
@@ -80,6 +94,7 @@ nav.span3{
 /* carousel */
 #myCarousel{
 	display: block;
+	margin-top: 20px;
 }
 
 /* IMAGENES INDEX */
@@ -97,8 +112,11 @@ nav.span3{
 		background-color: white;	
 		width: 250px;	
 		height: 340px;
-		margin: 15px;
+		margin: 15px 15px 35px 15px;
 		word-wrap: break-word;
+		line-height: 10px;
+		padding-bottom: 15px;
+		border-radius: 10px;
 		@include transiciones;
 		h3{
 			font-size: 1.2em;
@@ -106,6 +124,7 @@ nav.span3{
 			line-height: 20px;
 			border-bottom: 1px solid gray;
 			padding-bottom: 10px;
+			@include transiciones;
 		}		
 		img{			
 			margin-top: 10px;			
@@ -117,19 +136,28 @@ nav.span3{
 			color: $green;
 		}
 		p{	
+			margin: 5px;
 			padding-top: 32px !important;
 			width: 84px;
 			height: 52px;	
 			letter-spacing: -1px;
 			color: $white;	
 			background: url('precio.png') no-repeat, #2F96B4;			
-			display: inline-block;
+			display: block;
 			background-position: center;
 			font-size: 24px !important;
 			text-indent: -3px !important;
 			-webkit-border-radius: 60px;
 			border-radius: 60px;
 			border: 1px solid white;
+		}
+		.link{
+			margin: 15px 25px 5px 5px;
+			a{
+				text-align: left;
+				margin: 5px;
+				display: block;
+			}
 		}
 	}
 	.product:hover{
@@ -139,17 +167,18 @@ nav.span3{
 		h3{
 			text-shadow: 0 1px black;
 			color: $gray;
-			
+			@include transiciones;
 		}
 		img{
 			background-color: white;
 		}
-		-webkit-transform: scale(1.2);
-		-moz-transform: scale(1.2);
-		transform: scale(1.2);
+		
 		@include transiciones;
 	}
 }
+
+
+
 
 /* CARRUSEL */
 #myCarousel{
@@ -191,6 +220,7 @@ nav.span3{
 	h2{
 		color: $blue;
 		display: inline-block;
+		padding: 15px;
 	}
 	p{
 		margin-top: 40px;
@@ -215,10 +245,80 @@ nav.span3{
 }
 
 .normales{
+	background-color: rgba(250,240,250,0);
+	padding: 40px;
 	p{
 		text-align: left;
 		font-size: 1.2em;
 		letter-spacing: 2px;
 		line-height: 1.4em;
 	}
+}
+
+
+/* COMMENTS LIST */
+
+.comment_list{
+	margin: 15px;	
+	border-radius: 10px;
+	text-align: left;
+	.horario{		
+		word-wrap: break-word;
+	}
+	.tiempo{
+		padding-top: 30px;
+		vertical-align: bottom;
+		color: $blue;
+		text-shadow: 0 1px $black;
+		font-weight: bold;
+	}
+	.comment{		
+		border-bottom: 1px solid $blue;
+		b{
+			vertical-align: middle;
+			padding-right: 4px;
+		}
+		h3{			
+			font-size: 1.1em;
+			color: $black;
+			text-shadow: 0 0px 1px $blue;
+			margin-left: 170px;			
+		}				
+		.cuerpo{
+			border-left: 3px solid $blue;			
+			word-wrap: break-word;
+			letter-spacing: 2px;
+			text-shadow: 0 1px black;
+			padding: 20px;
+			margin-bottom: 20px;
+			p{
+				background-color: #E3E3E3;				
+				border-radius: 20px;
+				padding: 20px;
+			}
+		}
+	}
+}
+.comment_form{
+	h2{
+		text-shadow: 0 0 3px $gray;
+	}
+	textarea{
+		background-color: #FAFFBD;
+		width: 400px;
+		height: 150px;
+	}
+}
+.verde{
+	color: $green;
+}
+.cantidad{
+	width: 40px;
+	text-align: right;
+}
+td.quantity{
+	text-align: center;
+}
+th.quantity{
+	text-align: center;
 }

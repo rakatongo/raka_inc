@@ -1,17 +1,27 @@
 <article class="span8 offset1 well" id="single_product">
 	<header>
 		<h2><%= @product.titulo %></h2>
-	<header>
-	<%= image_tag(@product.imagen_url) %>	
-	
-	<% if !@product.options.empty? %>
-	<div class="forumalrio">
+	</header>
+	<%= image_tag(@product.imagen_url) %>
+	<div class="forumalrio">	
+	<% if !@product.options.empty? %>		
 		<%= label_tag @product.options.first.tipo, nil,class: "label label-info" %>		
 			<%= select_tag 'product',
 			 options_for_select(@product.options.collect{ |u| [u.texto, u.	valor] }),
 			 class: "label label-info" %>
-		<% end %>
-		<p><%= number_to_currency(@product.precio, presicion:2) %></p>
-	</div>
-	
+	<% end %>
+			<p><%= number_to_currency(@product.precio, presicion:2) %></p>
+			<%= link_to line_items_path(:product_id => @product), class: "btn btn-small btn-info" , method: :post do %>
+				<b class="icon-shopping-cart icon-white"></b> Add to Cart		
+	<% end %>
+	</div>		
 </article>
+<section class="span10">
+	<div class="comment_list">
+		<%= render @product.comments %>
+	</div>
+	<div class="comment_form">
+		<h2>Leave a comment</h2>
+		<%= render 'comment' %>
+	</div>
+</section>

@@ -1,0 +1,16 @@
+<section class="comment">	
+	<div class="row">		
+		<header class="span8">
+			<h3><b class="icon-user"></b><%= comment.user.email %></h3>				
+		</header>
+		<div class="span2 tiempo">
+			<%= time_tag(comment.created_at.to_datetime) %>
+		</div>
+		<div class="cuerpo span6 ">
+			<p><%= comment.body %></p>
+		</div>
+		
+	</div>	
+	
+	
+</section>

@@ -2,7 +2,7 @@ class PaginaController < ApplicationController
 	
 
   def index  	
-  	@random  = Product.random_items
+  	@products  = Product.random_items
   end
 
   def about  	

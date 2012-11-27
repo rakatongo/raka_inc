@@ -10,22 +10,27 @@
 	<nav>
 		<%= render 'layouts/navbar' %>		
 	</nav>
-	<header class="page-header">
-		<%= render 'layouts/header' %>
-	</header>
-	<div class="row">		
-		<nav class="span3">
-			<%= render 'layouts/sidebar' %>
-		</nav>
-		<section class="span11">
-			<% if es_index? %>
-				<%= render 'layouts/carrusel' %>			
-			<% end %>
-			<%= yield %>			
-		</section>
-		<section class="span3">
-			<%= image_tag("imagen.jpg") %>
-		</section>
+	<div class="cuerpaso">
+		<header class="page-header">
+			<%= render 'layouts/header' %>
+		</header>
+		<% flash.each do |key, value|%>
+	      <div class="span12 offset2 alert alert-<%= key%>"><%= value %></div>
+	 	<% end %>
+		<div class="row">		
+			<nav class="span3">
+				<%= render 'layouts/sidebar' %>
+			</nav>
+			<section class="span11">
+				<% if es_index? %>
+					<%= render 'layouts/carrusel' %>			
+				<% end %>
+				<%= yield %>			
+			</section>
+			<section class="span3">
+				<%= image_tag("imagen.jpg") %>
+			</section>
+		</div>
 	</div>
 </body>
 </html>
