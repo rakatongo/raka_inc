@@ -5,7 +5,11 @@
 #   gem 'sqlite3'
 development:
   adapter: postgresql
-  database: db/development.sqlite3
+  database: raka_inc
+  username: rakatongo
+  user: rakatongo
+  password: alejandro321
+  host: localhost
   pool: 5
   timeout: 5000
 
