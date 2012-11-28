@@ -22,10 +22,8 @@ end
 group :development do
 	gem 'sqlite3'
 end
-group :production, :test do
-	gem 'pg', '~> 0.12.2'
-end
 
+gem 'pg', '~> 0.12.2'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'faker'
