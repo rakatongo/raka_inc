@@ -13,6 +13,7 @@ RakaInc::Application.routes.draw do
   root to: "pagina#index"
   match "about", to: "pagina#about"
   match '/cart', to: "carts#index"
+  match '/contact', to: "pagina#contact"
   put '/cart/update', to: "carts#update"
   delete '/cart/limpiar', to: "carts#delete_items"  
   # The priority is based upon order of creation:

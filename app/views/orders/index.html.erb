@@ -1,5 +1,5 @@
 <% @orders.each do |f| %>
-	<h4>Order: <%= f.id %>, <%= time_tag f.created_at.to_datetime %></h4>
+	<h4>Order ID: <%= f.id %>. <%= time_tag f.created_at.to_datetime %></h4>
 	<table class="table table-striped" id="order">
 		<tr>
 			<td>Product ID</td>
